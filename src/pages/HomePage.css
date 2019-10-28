@@ -1,0 +1,60 @@
+body {
+    background-color: #F6F6F6;
+    min-height: 100%;
+}
+
+h1, h2, h3, span {
+    font-family: 'Roboto', sans-serif;
+    }
+
+.HomePage {
+    display: grid;
+    min-width: 100%;
+    min-height: 100%;
+    grid-template-rows: 20% 100%;
+    grid-template-columns: 10% 35% 10% 35%;
+    grid-template-areas: 
+    ". . . . ."
+    ". logo . signUp ."
+    ". . . . .";
+}
+
+.Logo {
+    grid-area: logo;
+    align-self: center;
+}
+
+.SignUp {
+    grid-area: signUp;
+    height: 40vw;
+    display: grid;
+    grid-template-rows: 90% 1%;
+    grid-template-areas: "card" "." "stepper";
+}
+
+.SignUpCard {
+    overflow: auto;
+    grid-area: card;
+}
+
+.SignUpHeader {
+    justify-content: center;
+    background-color: white;
+}
+
+.Title {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.SignUpBody {
+    padding: 10px
+}
+
+.stepper {
+    grid-area: stepper;
+    padding: 0px !important;
+    background-color: white !important;
+}
