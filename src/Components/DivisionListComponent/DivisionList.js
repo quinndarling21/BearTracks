@@ -82,7 +82,7 @@ class DivisionList extends Component {
         var requirementData = this.findRelevantDataforDivision(this.state.selectedDivision);
         if (this.state.divOrSearch === 'div') {
             return (
-                <div>
+                <div id = 'overflow'>
                     <Navbar bg = "primary" variant = 'dark' className="DivisionList"
                     >
                         <Nav className="mr-auto">

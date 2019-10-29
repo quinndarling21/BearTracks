@@ -218,13 +218,13 @@ class CategoryList extends Component {
                     renderSemesters = {this.props.renderSemesters}
                 />
                 <container className = 'LinkToAcademicGuide'>
-                    <span style = {{color: 'white'}}>{'See '}</span>
-                    <span className = 'LinkToAcademicGuide_Text' style = {{color: 'white'}}>
-                        < a style = {{color: 'white'}} href = {this.state.dataArray[this.state.selectedCatNum][this.state.selectedCategory]['Link']} target = '_blank'>
+                    <span id = 'linktext' style = {{color: 'white'}}>{'See '}</span>
+                    <span id = 'linktext' className = 'LinkToAcademicGuide_Text' style = {{color: 'white'}}>
+                        <a id = 'linktext' style = {{color: 'white'}} href = {this.state.dataArray[this.state.selectedCatNum][this.state.selectedCategory]['Link']} target = '_blank'>
                             Berkeley Academic Guide 
                         </a>
                     </span>
-                    <span style = {{color: 'white'}}>
+                    <span id = 'linktext' style = {{color: 'white'}}>
                         {' for official requirement information.'}
                     </span>
                 </container>

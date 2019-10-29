@@ -313,143 +313,160 @@ class HomePage extends React.Component {
       console.log(this.state.compCourses)
     return(
       <div className = "HomePage">
-        <img className = 'Logo' src={require("../Images/findyourpath.png")} height = '650vw' width = '650vw'/>
-            <div className = 'SignUp'>
-                <Card className ='SignUpCard'>
-                    {this.state.signUpPhase === 0 &&
-                    <CardContent className = 'SignUpBody'>
-                        <img className = 'Title' src={require("../Images/BearTracksTitle.png")} height = '100vw' width = '325vw'/>
-                            {(!this.state.firstNameError) && 
-                            <FormGroup controlId = "FirstName">
-                                <TextField
-                                        label="First Name"
-                                        margin="normal"
-                                        variant="outlined"
-                                        onChange={this.firstName}
-                                        value = {this.state.firstName}
-                                    />
-                            </FormGroup>}
-                            {(this.state.firstNameError) && 
-                            <FormGroup controlId = "FirstName">
-                                <TextField error
-                                        label="First Name"
-                                        margin="normal"
-                                        variant="outlined"
-                                        onChange={this.firstName}
-                                        value = {this.state.firstName}
-                                    />
-                            </FormGroup>}
-
-                            {(!this.state.lastNameError) &&
-                            <FormGroup controlId = "LastName">
+        <div className = 'LogoBox'>
+            <img className = 'Logo' src={require("../Images/findyourpath.png")}/>
+        </div>
+        <div className = 'SignUp'>
+            <Card className ='SignUpCard'>
+                {this.state.signUpPhase === 0 &&
+                <CardContent className = 'SignUpBody'>
+                    <img className = 'Title' src={require("../Images/BearTracksTitle.png")}/>
+                        {(!this.state.firstNameError) && 
+                        <FormGroup controlId = "FirstName">
                             <TextField
-                                        label="Last Name"
-                                        margin="normal"
-                                        variant="outlined"
-                                        onChange={this.lastName}
-                                        value = {this.state.lastName}
-                                    />
-                            </FormGroup>}
-                            {(this.state.lastNameError) &&
-                            <FormGroup controlId = "LastName">
+                                    label="First Name"
+                                    margin="normal"
+                                    variant="outlined"
+                                    onChange={this.firstName}
+                                    value = {this.state.firstName}
+                                />
+                        </FormGroup>}
+                        {(this.state.firstNameError) && 
+                        <FormGroup controlId = "FirstName">
                             <TextField error
-                                        label="Last Name"
-                                        margin="normal"
-                                        variant="outlined"
-                                        onChange={this.lastName}
-                                        value = {this.state.lastName}
-                                    />
-                            </FormGroup>}
-
-                            {!this.state.emailError &&
-                            <FormGroup controlId = "UserEmail">
-                            <TextField
-                                        label="Email"
-                                        margin="normal"
-                                        variant="outlined"
-                                        onChange={this.updateEmail}
-                                        value = {this.state.email}
-                                    />
-                            </FormGroup>}
-                            {this.state.emailError &&
-                            <FormGroup controlId = "UserEmail">
-                            <TextField error
-                                        label="Email"
-                                        margin="normal"
-                                        variant="outlined"
-                                        onChange={this.updateEmail}
-                                        value = {this.state.email}
-                                    />
-                            </FormGroup>}
-
-                            {!this.state.passwordError &&
-                            <FormGroup controlId = "UserPassWord">
-                            <TextField 
-                                        label="Password"
-                                        type = 'password'
-                                        margin="normal"
-                                        variant="outlined"
-                                        onChange={this.updatePassword}
-                                        value = {this.state.password}
-                                    />
-                            </FormGroup>}
-                            {this.state.passwordError &&
-                            <FormGroup controlId = "UserPassWord">
-                            <TextField error
-                                        label="Password"
-                                        type = 'password'
-                                        margin="normal"
-                                        variant="outlined"
-                                        onChange={this.updatePassword}
-                                        value = {this.state.password}
-                                    />
-                            </FormGroup>}
-                            {(this.state.passwordError||this.state.firstNameError||this.state.lastNameError||this.state.emailError) && 
-                            <div style = {{textAlign: 'center'}}>
-                                <a style = {{color: 'red'}}>This field is required.</a>
-                            </div>}
-                            <div style = {{textAlign: 'center'}}>
-                                <Button style = {{marginTop: '1vw'}}variant = 'contained' color = 'primary' onClick = {()=>this.handleNext()}>
-                                Sign Up
-                                </Button>
-                            </div>
-                    </CardContent>}
-                    {this.state.signUpPhase === 1 && 
-                    <CardContent className = 'SignUpBody'>
-                    <img className = 'Title' src={require("../Images/BearTracksTitle.png")} height = '100vw' width = '325vw'/>
-                        {(!this.state.startTermError && !this.state.startYearError) &&
-                        <div style = {{ marginBottom: '-8px'}}>
-                            <a style = {{size: '16vw', fontWeight:'800'}}>First Semester</a>
-                        </div>}
-                        {(this.state.startYearError || this.state.startTermError) &&
-                        <div style = {{ marginBottom: '-8px'}}>
-                            <a style = {{size: '16vw', fontWeight:'800', color:'red'}}>First Semester</a>
-                        </div>}
-                        {/* {!this.state.titleError && 
-                        <FormGroup controlId="planTitle">
-                            <TextField
-                                        label="Plan Title"
-                                        margin="normal"
-                                        variant="outlined"
-                                        onChange={this.updateTitle}
-                                        value = {this.state.title}
-                                    />
+                                    label="First Name"
+                                    margin="normal"
+                                    variant="outlined"
+                                    onChange={this.firstName}
+                                    value = {this.state.firstName}
+                                />
                         </FormGroup>}
 
-                        {this.state.titleError && 
-                        <FormGroup controlId="planTitle">
+                        {(!this.state.lastNameError) &&
+                        <FormGroup controlId = "LastName">
+                        <TextField
+                                    label="Last Name"
+                                    margin="normal"
+                                    variant="outlined"
+                                    onChange={this.lastName}
+                                    value = {this.state.lastName}
+                                />
+                        </FormGroup>}
+                        {(this.state.lastNameError) &&
+                        <FormGroup controlId = "LastName">
+                        <TextField error
+                                    label="Last Name"
+                                    margin="normal"
+                                    variant="outlined"
+                                    onChange={this.lastName}
+                                    value = {this.state.lastName}
+                                />
+                        </FormGroup>}
+
+                        {!this.state.emailError &&
+                        <FormGroup controlId = "UserEmail">
+                        <TextField
+                                    label="Email"
+                                    margin="normal"
+                                    variant="outlined"
+                                    onChange={this.updateEmail}
+                                    value = {this.state.email}
+                                />
+                        </FormGroup>}
+                        {this.state.emailError &&
+                        <FormGroup controlId = "UserEmail">
+                        <TextField error
+                                    label="Email"
+                                    margin="normal"
+                                    variant="outlined"
+                                    onChange={this.updateEmail}
+                                    value = {this.state.email}
+                                />
+                        </FormGroup>}
+
+                        {!this.state.passwordError &&
+                        <FormGroup controlId = "UserPassWord">
+                        <TextField 
+                                    label="Password"
+                                    type = 'password'
+                                    margin="normal"
+                                    variant="outlined"
+                                    onChange={this.updatePassword}
+                                    value = {this.state.password}
+                                />
+                        </FormGroup>}
+                        {this.state.passwordError &&
+                        <FormGroup controlId = "UserPassWord">
+                        <TextField error
+                                    label="Password"
+                                    type = 'password'
+                                    margin="normal"
+                                    variant="outlined"
+                                    onChange={this.updatePassword}
+                                    value = {this.state.password}
+                                />
+                        </FormGroup>}
+                        {(this.state.passwordError||this.state.firstNameError||this.state.lastNameError||this.state.emailError) && 
+                        <div style = {{textAlign: 'center'}}>
+                            <a style = {{color: 'red'}}>This field is required.</a>
+                        </div>}
+                        <div style = {{textAlign: 'center'}}>
+                            <Button style = {{marginTop: '1vh'}}variant = 'contained' color = 'primary' onClick = {()=>this.handleNext()}>
+                            Sign Up
+                            </Button>
+                        </div>
+                </CardContent>}
+                {this.state.signUpPhase === 1 && 
+                <CardContent className = 'SignUpBody'>
+                <img className = 'Title' src={require("../Images/BearTracksTitle.png")}/>
+                    {(!this.state.startTermError && !this.state.startYearError) &&
+                    <div style = {{ marginBottom: '-8px'}}>
+                        <a style = {{size: '16vw', fontWeight:'800'}}>First Semester</a>
+                    </div>}
+                    {(this.state.startYearError || this.state.startTermError) &&
+                    <div style = {{ marginBottom: '-8px'}}>
+                        <a style = {{size: '16vw', fontWeight:'800', color:'red'}}>First Semester</a>
+                    </div>}
+                    {/* {!this.state.titleError && 
+                    <FormGroup controlId="planTitle">
+                        <TextField
+                                    label="Plan Title"
+                                    margin="normal"
+                                    variant="outlined"
+                                    onChange={this.updateTitle}
+                                    value = {this.state.title}
+                                />
+                    </FormGroup>}
+
+                    {this.state.titleError && 
+                    <FormGroup controlId="planTitle">
+                        <TextField error
+                                    label="Plan Title"
+                                    margin="normal"
+                                    variant="outlined"
+                                    onChange={this.updateTitle}
+                                    value = {this.state.title}
+                                />
+                    </FormGroup>} */}
+                    
+                    <FormGroup row controlId="selectFirstTerm">
+                        {!this.state.startTermError && 
+                        <TextField
+                            select
+                            label="First Term"
+                            margin="normal"
+                            variant = 'outlined'
+                            style = {{width: '49%'}}
+                            onChange={this.updateStartTerm}
+                            value = {this.state.startTerm}>
+                            {[{label: 'Fall', value: 'Fall'}, {label: 'Spring', value: 'Spring'}, {label: 'Summer', value: 'Summer'}].map(name => (
+                                <MenuItem key={name} value={name.value}>
+                                {name.label}
+                                </MenuItem>
+                            ))}
+                            </TextField>}
+                            {this.state.startTermError && 
                             <TextField error
-                                        label="Plan Title"
-                                        margin="normal"
-                                        variant="outlined"
-                                        onChange={this.updateTitle}
-                                        value = {this.state.title}
-                                    />
-                        </FormGroup>} */}
-                        
-                        <FormGroup row controlId="selectFirstTerm">
-                            {!this.state.startTermError && 
-                            <TextField
                                 select
                                 label="First Term"
                                 margin="normal"
@@ -462,287 +479,272 @@ class HomePage extends React.Component {
                                     {name.label}
                                     </MenuItem>
                                 ))}
-                                </TextField>}
-                                {this.state.startTermError && 
-                                <TextField error
-                                    select
-                                    label="First Term"
-                                    margin="normal"
-                                    variant = 'outlined'
-                                    style = {{width: '49%'}}
-                                    onChange={this.updateStartTerm}
-                                    value = {this.state.startTerm}>
-                                    {[{label: 'Fall', value: 'Fall'}, {label: 'Spring', value: 'Spring'}, {label: 'Summer', value: 'Summer'}].map(name => (
-                                        <MenuItem key={name} value={name.value}>
-                                        {name.label}
-                                        </MenuItem>
-                                    ))}
-                                </TextField>}
+                            </TextField>}
 
-                           {!this.state.startYearError && 
-                           <TextField
-                            select
-                            label="First Year"
-                            margin="normal"
-                            variant = 'outlined'
-                            style = {{width: '49%', marginLeft: '2%'}}
-                            onChange={this.updateStartYear}
-                            value = {this.state.startYear}>
-                            {[{label: '2016', value: '2016'}, {label: '2017', value: '2017'}, {label: '2018', value: '2018'}, {label: '2019', value: '2019'}, {label: '2020', value: '2020'}].map(name => (
-                                <MenuItem key={name} value={name.value}>
-                                {name.label}
-                                </MenuItem>
-                            ))}
-                            </TextField>}
-                            {this.state.startYearError && 
-                           <TextField
-                            select
-                            error
-                            label="First Year"
-                            margin="normal"
-                            variant = 'outlined'
-                            style = {{width: '49%', marginLeft: '2%'}}
-                            onChange={this.updateStartYear}
-                            value = {this.state.startYear}>
-                            {[{label: '2016', value: '2016'}, {label: '2017', value: '2017'}, {label: '2018', value: '2018'}, {label: '2019', value: '2019'}, {label: '2020', value: '2020'}].map(name => (
-                                <MenuItem key={name} value={name.value}>
-                                {name.label}
-                                </MenuItem>
-                            ))}
-                            </TextField>}
-                        </FormGroup>
-                        
-                        {(!this.state.endTermError && !this.state.endYearError) &&
-                        <div style = {{ marginTop: '10px', marginBottom: '-8px'}}>
-                            <a style = {{size: '16vw', fontWeight:'800'}}>Last Semester</a>
-                        </div>}
-                        {(this.state.endTermError || this.state.endYearError) &&
-                        <div style = {{ marginTop: '10px', marginBottom: '-8px'}}>
-                            <a style = {{size: '16vw', fontWeight:'800', color:'red'}}>Last Semester</a>
-                        </div>}
-                        <FormGroup row controlId="selectLastTerm">
-                        {!this.state.endTermError && 
+                        {!this.state.startYearError && 
                         <TextField
-                            select
-                            label="Last Term"
-                            margin="normal"
-                            variant = 'outlined'
-                            style = {{width: '49%'}}
-                            onChange={this.updateEndTerm}
-                            value = {this.state.endTerm}>
-                            {[{label: 'Fall', value: 'Fall'}, {label: 'Spring', value: 'Spring'}, {label: 'Summer', value: 'Summer'}].map(name => (
-                                <MenuItem key={name} value={name.value}>
-                                {name.label}
-                                </MenuItem>
-                            ))}
-                            </TextField>}
-                            {this.state.endTermError && 
-                            <TextField
-                            error
-                            select
-                            label="Last Term"
-                            margin="normal"
-                            variant = 'outlined'
-                            style = {{width: '49%'}}
-                            onChange={this.updateEndTerm}
-                            value = {this.state.endTerm}>
-                            {[{label: 'Fall', value: 'Fall'}, {label: 'Spring', value: 'Spring'}, {label: 'Summer', value: 'Summer'}].map(name => (
-                                <MenuItem key={name} value={name.value}>
-                                {name.label}
-                                </MenuItem>
-                            ))}
-                            </TextField>}
+                        select
+                        label="First Year"
+                        margin="normal"
+                        variant = 'outlined'
+                        style = {{width: '49%', marginLeft: '2%'}}
+                        onChange={this.updateStartYear}
+                        value = {this.state.startYear}>
+                        {[{label: '2016', value: '2016'}, {label: '2017', value: '2017'}, {label: '2018', value: '2018'}, {label: '2019', value: '2019'}, {label: '2020', value: '2020'}].map(name => (
+                            <MenuItem key={name} value={name.value}>
+                            {name.label}
+                            </MenuItem>
+                        ))}
+                        </TextField>}
+                        {this.state.startYearError && 
+                        <TextField
+                        select
+                        error
+                        label="First Year"
+                        margin="normal"
+                        variant = 'outlined'
+                        style = {{width: '49%', marginLeft: '2%'}}
+                        onChange={this.updateStartYear}
+                        value = {this.state.startYear}>
+                        {[{label: '2016', value: '2016'}, {label: '2017', value: '2017'}, {label: '2018', value: '2018'}, {label: '2019', value: '2019'}, {label: '2020', value: '2020'}].map(name => (
+                            <MenuItem key={name} value={name.value}>
+                            {name.label}
+                            </MenuItem>
+                        ))}
+                        </TextField>}
+                    </FormGroup>
+                    
+                    {(!this.state.endTermError && !this.state.endYearError) &&
+                    <div style = {{ marginTop: '10px', marginBottom: '-8px'}}>
+                        <a style = {{size: '16vw', fontWeight:'800'}}>Last Semester</a>
+                    </div>}
+                    {(this.state.endTermError || this.state.endYearError) &&
+                    <div style = {{ marginTop: '10px', marginBottom: '-8px'}}>
+                        <a style = {{size: '16vw', fontWeight:'800', color:'red'}}>Last Semester</a>
+                    </div>}
+                    <FormGroup row controlId="selectLastTerm">
+                    {!this.state.endTermError && 
+                    <TextField
+                        select
+                        label="Last Term"
+                        margin="normal"
+                        variant = 'outlined'
+                        style = {{width: '49%'}}
+                        onChange={this.updateEndTerm}
+                        value = {this.state.endTerm}>
+                        {[{label: 'Fall', value: 'Fall'}, {label: 'Spring', value: 'Spring'}, {label: 'Summer', value: 'Summer'}].map(name => (
+                            <MenuItem key={name} value={name.value}>
+                            {name.label}
+                            </MenuItem>
+                        ))}
+                        </TextField>}
+                        {this.state.endTermError && 
+                        <TextField
+                        error
+                        select
+                        label="Last Term"
+                        margin="normal"
+                        variant = 'outlined'
+                        style = {{width: '49%'}}
+                        onChange={this.updateEndTerm}
+                        value = {this.state.endTerm}>
+                        {[{label: 'Fall', value: 'Fall'}, {label: 'Spring', value: 'Spring'}, {label: 'Summer', value: 'Summer'}].map(name => (
+                            <MenuItem key={name} value={name.value}>
+                            {name.label}
+                            </MenuItem>
+                        ))}
+                        </TextField>}
 
-                            {!this.state.endYearError && 
-                            <TextField
-                            select
-                            label="Last Year"
-                            margin="normal"
-                            variant = 'outlined'
-                            style = {{width: '49%', marginLeft: '2%'}}
-                            onChange={this.updateEndYear}
-                            value = {this.state.endYear}>
-                            {[{label: '2020', value: '2020'}, {label: '2021', value: '2021'}, {label: '2022', value: '2022'}, {label: '2023', value: '2023'}, {label: '2024', value: '2024'}].map(name => (
-                                <MenuItem key={name} value={name.value}>
-                                {name.label}
-                                </MenuItem>
-                            ))}
-                            </TextField>}
-                            {this.state.endYearError && 
-                            <TextField
-                            error
-                            select
-                            label="Last Year"
-                            margin="normal"
-                            variant = 'outlined'
-                            style = {{width: '49%', marginLeft: '2%'}}
-                            onChange={this.updateEndYear}
-                            value = {this.state.endYear}>
-                            {[{label: '2020', value: '2020'}, {label: '2021', value: '2021'}, {label: '2022', value: '2022'}, {label: '2023', value: '2023'}, {label: '2024', value: '2024'}].map(name => (
-                                <MenuItem key={name} value={name.value}>
-                                {name.label}
-                                </MenuItem>
-                            ))}
-                            </TextField>}
-                        </FormGroup>
+                        {!this.state.endYearError && 
+                        <TextField
+                        select
+                        label="Last Year"
+                        margin="normal"
+                        variant = 'outlined'
+                        style = {{width: '49%', marginLeft: '2%'}}
+                        onChange={this.updateEndYear}
+                        value = {this.state.endYear}>
+                        {[{label: '2020', value: '2020'}, {label: '2021', value: '2021'}, {label: '2022', value: '2022'}, {label: '2023', value: '2023'}, {label: '2024', value: '2024'}].map(name => (
+                            <MenuItem key={name} value={name.value}>
+                            {name.label}
+                            </MenuItem>
+                        ))}
+                        </TextField>}
+                        {this.state.endYearError && 
+                        <TextField
+                        error
+                        select
+                        label="Last Year"
+                        margin="normal"
+                        variant = 'outlined'
+                        style = {{width: '49%', marginLeft: '2%'}}
+                        onChange={this.updateEndYear}
+                        value = {this.state.endYear}>
+                        {[{label: '2020', value: '2020'}, {label: '2021', value: '2021'}, {label: '2022', value: '2022'}, {label: '2023', value: '2023'}, {label: '2024', value: '2024'}].map(name => (
+                            <MenuItem key={name} value={name.value}>
+                            {name.label}
+                            </MenuItem>
+                        ))}
+                        </TextField>}
+                    </FormGroup>
 
-                        {!this.state.majorError && 
-                        <div>
-                            <div style = {{ marginTop: '10px', marginBottom: '-2px'}}>
-                                <a style = {{size: '16vw', fontWeight:'800'}}>Intended Majors</a>
-                            </div>
-                            <FormGroup controlId="editMajors" style = {{marginTop: '.5vw'}}>
-                            <Select
-                                isMulti
-                                name="intendedMajors"
-                                className="intendedMajors"
-                                options={majorOptions}
-                                onChange = {this.updateMajor}
-                                ref = {this.majorInput}
-                            />
-                            </FormGroup>
-                        </div>}
-                        {this.state.majorError &&
-                        <div>
-                            <div style = {{ marginTop: '10px', marginBottom: '-2px'}}>
-                                <a style = {{size: '16vw', fontWeight:'800', color:'red'}}>Intended Majors</a>
-                            </div>
-                            <FormGroup controlId="editMajors" style = {{marginTop: '.5vw'}}>
-                                    <Select
-                                        isMulti
-                                        name="intendedMajors"
-                                        className="intendedMajors"
-                                        options={majorOptions}
-                                        onChange = {this.updateMajor}
-                                        ref = {this.majorInput}
-                                        styles={{
-                                            container: base => ({
-                                              ...base,
-                                              border: 'solid 1px red',
-                                              borderRadius: '5px',
-                                              padding: 0,
-                                            }),
-                                            placeholder: base => ({
-                                                ...base,
-                                                fontSize: '1em',
-                                                color: 'red',
-                                                fontWeight: 400,
-                                              })}}
-                                    />
-                            </FormGroup>
-                        </div>}
-
-                        <div style = {{ marginTop: '1vw', marginBottom: '-2px'}}>
-                            <a style = {{size: '16vw', fontWeight:'800'}}>Intended Minors</a>
+                    {!this.state.majorError && 
+                    <div>
+                        <div style = {{ marginTop: '10px', marginBottom: '-2px'}}>
+                            <a style = {{size: '16vw', fontWeight:'800'}}>Intended Majors</a>
                         </div>
-                        <FormGroup controlId="editMinors" style = {{marginTop: '.5vw'}}>
+                        <FormGroup controlId="editMajors" style = {{marginTop: '.5vh'}}>
+                        <Select
+                            isMulti
+                            name="intendedMajors"
+                            className="intendedMajors"
+                            options={majorOptions}
+                            onChange = {this.updateMajor}
+                            ref = {this.majorInput}
+                        />
+                        </FormGroup>
+                    </div>}
+                    {this.state.majorError &&
+                    <div>
+                        <div style = {{ marginTop: '10px', marginBottom: '-2px'}}>
+                            <a style = {{size: '16vw', fontWeight:'800', color:'red'}}>Intended Majors</a>
+                        </div>
+                        <FormGroup controlId="editMajors" style = {{marginTop: '.5vh'}}>
                                 <Select
                                     isMulti
-                                    name="intendedMinors"
-                                    className="intendedMinors"
-                                    options={minorOptions}
-                                    onChange = {this.updateMinor}
-                                    ref = {this.minorInput}   
+                                    name="intendedMajors"
+                                    className="intendedMajors"
+                                    options={majorOptions}
+                                    onChange = {this.updateMajor}
+                                    ref = {this.majorInput}
+                                    styles={{
+                                        container: base => ({
+                                            ...base,
+                                            border: 'solid 1px red',
+                                            borderRadius: '5px',
+                                            padding: 0,
+                                        }),
+                                        placeholder: base => ({
+                                            ...base,
+                                            fontSize: '1em',
+                                            color: 'red',
+                                            fontWeight: 400,
+                                            })}}
                                 />
                         </FormGroup>
-                        {(this.state.titleError||this.state.startTermError||this.state.startYearError||this.state.endYearError||this.state.endTermError||this.state.majorError)&&
-                        <div style = {{textAlign: 'center', marginTop: '1vw'}}>
-                        <a style = {{color: 'red'}}>This field is required.</a>
                     </div>}
-                    </CardContent>}
 
-                    {this.state.signUpPhase === this.state.phases - 2 && this.state.compCourses.length !== 0 &&
-                    <CardContent className = 'SignUpBody'>
-                        <img className = 'Title' src={require("../Images/BearTracksTitle.png")} height = '100vw' width = '325vw'/>  
-                        {this.state.compCourses.map((semester, index) => 
-                            <div style = {{marginBottom: '1vw'}}>                            
-                                <div>
-                                    <a>Input completed courses for {this.state.compCourses[index][0]}</a>
-                                </div>
-                                <FormGroup>
-                                    <AsyncSelect
-                                        isMulti
-                                        cacheOptions
-                                        defaultOptions
-                                        loadOptions={promiseOptions}
-                                        onClick= {()=>this.setCourseIndex(index)}
-                                        onChange = {this.updateCompCourses}
-                                    />
-                                </FormGroup>
-                            </div>)}
-                    </CardContent>}
+                    <div style = {{ marginTop: '1vh', marginBottom: '-2px'}}>
+                        <a style = {{size: '16vw', fontWeight:'800'}}>Intended Minors</a>
+                    </div>
+                    <FormGroup controlId="editMinors" style = {{marginTop: '.5vh', marginBottom: '.5vh'}}>
+                            <Select
+                                isMulti
+                                name="intendedMinors"
+                                className="intendedMinors"
+                                options={minorOptions}
+                                onChange = {this.updateMinor}
+                                ref = {this.minorInput}   
+                            />
+                    </FormGroup>
+                    {(this.state.titleError||this.state.startTermError||this.state.startYearError||this.state.endYearError||this.state.endTermError||this.state.majorError)&&
+                    <div style = {{textAlign: 'center', marginTop: '1vh'}}>
+                    <a style = {{color: 'red'}}>This field is required.</a>
+                </div>}
+                </CardContent>}
+
+                {this.state.signUpPhase === this.state.phases - 2 && this.state.compCourses.length !== 0 &&
+                <CardContent className = 'SignUpBody'>
+                    <img className = 'Title' src={require("../Images/BearTracksTitle.png")}/>  
+                    {this.state.compCourses.map((semester, index) => 
+                        <div style = {{marginBottom: '1vh'}}>                            
+                            <div>
+                                <a>Input completed courses for {this.state.compCourses[index][0]}</a>
+                            </div>
+                            <FormGroup>
+                                <AsyncSelect
+                                    isMulti
+                                    cacheOptions
+                                    defaultOptions
+                                    loadOptions={promiseOptions}
+                                    onClick= {()=>this.setCourseIndex(index)}
+                                    onChange = {this.updateCompCourses}
+                                />
+                            </FormGroup>
+                        </div>)}
+                </CardContent>}
 
 
-                    {this.state.signUpPhase === this.state.phases - 1 &&
-                    <CardContent className = 'SignUpBody'>
-                        <img className = 'Title' src={require("../Images/BearTracksTitle.png")} height = '100vw' width = '325vw'/>
-                        <h1>Congratulations {this.state.firstName}!</h1>
-                        <h1>Your BearTracks account has been created</h1>
-                        <Button onClick = {() => this.addPlan()} onClick = {()=>this.props.toPlanner()}>
-                            Take me to my peronsal planner
+                {this.state.signUpPhase === this.state.phases - 1 &&
+                <CardContent className = 'SignUpBody'>
+                    <img className = 'Title' src={require("../Images/BearTracksTitle.png")}/>
+                    <h1>Congratulations {this.state.firstName}!</h1>
+                    <h1>Your BearTracks account has been created</h1>
+                    <Button onClick = {() => this.addPlan()} onClick = {()=>this.props.toPlanner()}>
+                        Take me to my peronsal planner
+                    </Button>
+                </CardContent>}
+                {this.state.signUpPhase === 'login' &&
+                <CardContent className = 'SignUpBody'>
+                    <img className = 'Title' src={require("../Images/BearTracksTitle.png")}/>
+                    <FormGroup controlId = "UserEmail">
+                        <TextField
+                                    label="Email"
+                                    margin="normal"
+                                    variant="outlined"
+                                    onChange={this.updateEmail}
+                                    value = {this.state.updateEmail}
+                                />
+                        </FormGroup>
+                        <FormGroup controlId = "UserPassWord">
+                        <TextField
+                                    label="Password"
+                                    type = 'password'
+                                    margin="normal"
+                                    variant="outlined"
+                                    onChange={this.updatePassword}
+                                    value = {this.state.password}
+                                />
+                        </FormGroup>
+                        <div style = {{textAlign: 'center', marginTop: '1vh'}}>
+                        <Button variant = 'contained' color = 'primary' onClick = {()=>this.props.toPlanner()} >
+                        Log In
                         </Button>
-                    </CardContent>}
-                    {this.state.signUpPhase === 'login' &&
-                    <CardContent className = 'SignUpBody'>
-                        <img className = 'Title' src={require("../Images/BearTracksTitle.png")} height = '100vw' width = '325vw'/>
-                        <FormGroup controlId = "UserEmail">
-                            <TextField
-                                        label="Email"
-                                        margin="normal"
-                                        variant="outlined"
-                                        onChange={this.updateEmail}
-                                        value = {this.state.updateEmail}
-                                    />
-                            </FormGroup>
-                            <FormGroup controlId = "UserPassWord">
-                            <TextField
-                                        label="Password"
-                                        type = 'password'
-                                        margin="normal"
-                                        variant="outlined"
-                                        onChange={this.updatePassword}
-                                        value = {this.state.password}
-                                    />
-                            </FormGroup>
-                            <div style = {{textAlign: 'center', marginTop: '1vw'}}>
-                            <Button variant = 'contained' color = 'primary' onClick = {()=>this.props.toPlanner()} >
-                            Log In
+                    </div>
+                </CardContent>}
+            </Card>
+            <Card className = 'stepper'>
+                <CardContent>
+                {(this.state.signUpPhase !== 0 && this.state.signUpPhase !== 'login') &&
+                    <MobileStepper
+                        className = 'stepper'
+                        variant="dots"
+                        steps={this.state.phases}
+                        position="static"
+                        activeStep={this.state.signUpPhase}
+                        nextButton={
+                            <Button size="small" onClick={this.handleNext} disabled={this.state.signUpPhase === 3}>
+                            Next
                             </Button>
-                        </div>
-                    </CardContent>}
-                </Card>
-                <Card className = 'stepper'>
-                    <CardContent>
-                    {(this.state.signUpPhase !== 0 && this.state.signUpPhase !== 'login') &&
-                        <MobileStepper
-                            className = 'stepper'
-                            variant="dots"
-                            steps={this.state.phases}
-                            position="static"
-                            activeStep={this.state.signUpPhase}
-                            nextButton={
-                                <Button size="small" onClick={this.handleNext} disabled={this.state.signUpPhase === 3}>
-                                Next
-                                </Button>
-                            }
-                            backButton={
-                                <Button size="small" onClick={this.handleBack} disabled={this.state.signUpPhase === 0}>
-                                Back
-                                </Button>} />}
-                    {this.state.signUpPhase === 0 &&
-                        <div style={{textAlign: 'center'}}>
-                            <a>Have an account?</a>
-                            <a style = {{marginLeft: '5px', color: '#2074BD'}} onClick = {()=>this.logIn()}>Log in</a>
-                        </div>}
-                    {this.state.signUpPhase === 'login' &&
-                        <div style={{textAlign: 'center'}}>
-                        <a>Don't have an account?</a>
-                        <a style = {{marginLeft: '5px', color: '#2074BD'}} onClick = {()=>this.reset()}>Sign Up</a>
+                        }
+                        backButton={
+                            <Button size="small" onClick={this.handleBack} disabled={this.state.signUpPhase === 0}>
+                            Back
+                            </Button>} />}
+                {this.state.signUpPhase === 0 &&
+                    <div style={{textAlign: 'center'}}>
+                        <a>Have an account?</a>
+                        <a style = {{marginLeft: '5px', color: '#2074BD'}} onClick = {()=>this.logIn()}>Log in</a>
                     </div>}
-                    </CardContent>
-                </Card>
-            </div>
-      </div>
+                {this.state.signUpPhase === 'login' &&
+                    <div style={{textAlign: 'center'}}>
+                    <a>Don't have an account?</a>
+                    <a style = {{marginLeft: '5px', color: '#2074BD'}} onClick = {()=>this.reset()}>Sign Up</a>
+                </div>}
+                </CardContent>
+            </Card>
+        </div>
+    </div>
 
     );
   }

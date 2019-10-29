@@ -8,7 +8,7 @@ class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            page: 0
+            page: 1
         }
         this.toPlanner = this.toPlanner.bind(this)
     }

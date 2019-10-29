@@ -511,11 +511,11 @@ class Planner extends Component {
                                     <img src={require("../../Images/editDegrees.png")} height="25" width="25"/>
                                 </IconButton>
                             </Tooltip>
-                            <Tooltip title = 'Download Plan' TransitionComponent={Fade} TransitionProps={{ timeout: {enter: 600, exit: 100}}}>
+                            {/* <Tooltip title = 'Download Plan' TransitionComponent={Fade} TransitionProps={{ timeout: {enter: 600, exit: 100}}}>
                                 <IconButton className = 'PlanOptionsButton' onClick = {this.createAndDownloadPdf}>
                                     <img src={require("../../Images/exportPlan.png")} height="25" width="25"/>
                                 </IconButton>
-                            </Tooltip>
+                            </Tooltip> */}
                             <Tooltip title = 'Delete Plan' TransitionComponent={Fade} TransitionProps={{ timeout: {enter: 600, exit: 100}}}>
                                 <IconButton className = 'PlanOptionsButton' onClick = {()=>this.showDeletePlan()}>
                                     <img src={require("../../Images/deletePlan.png")} height="25" width="25"/>

@@ -26,7 +26,7 @@ class App extends React.Component {
             </Navbar.Collapse>
           </Navbar>
           <Planner />
-          <Navbar variant = 'light' className = "Footer" fixed = 'bottom'>
+          <Navbar variant = 'light' className = "Footer">
             © BearTracks 2019
           </Navbar>
         </div>

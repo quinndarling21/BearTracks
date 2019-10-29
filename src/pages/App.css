@@ -3,6 +3,14 @@ body {
     min-height: 100%;
 }
 
+html {
+  min-height: 100%;
+}
+
+div#middle {
+  min-width: 1500px;
+}
+
 h1, h2, h3, span {
 font-family: 'Roboto', sans-serif;
 }
@@ -21,6 +29,7 @@ font-family: 'Roboto', sans-serif;
     background-color: white;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding-bottom: 0px;
+    min-width: 667px;
     }
 
         .Brand {
@@ -31,6 +40,7 @@ font-family: 'Roboto', sans-serif;
         .Logo {
             margin-top: -5px;
             margin-right: 5px;
+            min-width: 217px;
         }
         
         .BearTracks {
@@ -38,12 +48,13 @@ font-family: 'Roboto', sans-serif;
             font-size: 1.5vw;
         }
     .Planner {
+        margin-top: 10px;
         background-color: #F6F6F6;
         grid-area: planner;
-        max-height: 100%;
+        height: auto;
         display: grid;
-        grid-template-columns: 33%;
-        grid-column-gap: 20px; 
+        grid-template-columns: 34%;
+        grid-column-gap: 15px; 
         grid-template-areas:
             "courses schedule"
         }
@@ -51,19 +62,23 @@ font-family: 'Roboto', sans-serif;
         .CourseContainer {
             background-color: white;
             grid-area: courses;
-            margin-left: 20px;
+            justify-self: center;
             display: grid;
-            max-width: 100%;
-            grid-template-rows: 5% 5%;
+            min-width: 360px;
+            width: 98%;
+            height: 85vh;
+            grid-template-rows: 5% 5% 85%;
+            margin-left: 15px;
             grid-template-areas:
                 "progress"
                 "category"
                 "divisionList"
+                "link"
           }
 
             .TotalProgress {
             grid-area: progress;
-            font-size: 1vw;
+            font-size: calc(10px + .5vw);
             display: grid;
             padding-top: 10px;
             padding-left: 5px;
@@ -82,7 +97,7 @@ font-family: 'Roboto', sans-serif;
                     margin-bottom: 4px;
                     font-weight: 575;
                     white-space: nowrap;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                 }
                 
                 .TotalProgressBar {
@@ -117,7 +132,7 @@ font-family: 'Roboto', sans-serif;
                         color: #007bff;
                         background-color: white;
                         border: none;
-                        font-size: 1.25vw;
+                        font-size: calc(16px + .2vw);
                         padding: 2px;
                         margin-right: 5px;
                         margin-bottom: 5px;
@@ -131,14 +146,14 @@ font-family: 'Roboto', sans-serif;
                 .CategoryProgress {
                     grid-area: completeness;
                     color: darkslategrey;
-                    font-size: 1vw;
+                    font-size: calc(8px + .5vw);
                     margin-top: 1%;
                     float: right;
                 }
 
                 .DivisionList {
                     border-right: none;
-                    font-size: 1vw;
+                    font-size: calc(16px + .2vw);
                     padding-left: 2%;
                   }
                   
@@ -162,10 +177,12 @@ font-family: 'Roboto', sans-serif;
                 .RequirementTable {
                     grid-area: divisionList;
                     position: relative;
-                    overflow: auto;
-                    max-width: 100%;
-                    height: 628px;
+                    min-width: 100%;
                   }
+
+                #overflow {
+                  overflow: scroll;
+                }
 
                   .requirement {
                       margin: 0px;
@@ -196,6 +213,7 @@ font-family: 'Roboto', sans-serif;
                   }
 
                   .RequirementTitle {
+                    font-size: 18px !important;
                     grid-area: title;
                     grid-row: 1;
                     padding-bottom: -.5%;
@@ -218,7 +236,7 @@ font-family: 'Roboto', sans-serif;
                     grid-row: 1;
                     color: #007bff;
                     font-weight: 600;
-                    font-size: 1.15vw;
+                    font-size: 18px !important;
                     align-self: center;
                     justify-self: right;
                     margin-top: 1.5%;
@@ -229,7 +247,7 @@ font-family: 'Roboto', sans-serif;
                     padding-bottom: -.5%;
                     color: #007bff;
                     font-weight: 600;
-                    font-size: 1vw;
+                    font-size: 10px;
                     margin-right: 0vw;
                     white-space: nowrap;
                     margin-top: 7%;
@@ -258,7 +276,7 @@ font-family: 'Roboto', sans-serif;
 
                   .SubgroupCardHeader {
                     margin-top: 2px;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     max-width: 100%;
                     padding: 10px;
                     font-weight: 600;
@@ -313,14 +331,14 @@ font-family: 'Roboto', sans-serif;
                     grid-template-areas: "compcourse word";
                     color: #0F9D58;
                     background-color: #EBFFEC;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     border-radius: 5px;
                   }
 
                   .Completed {
                     grid-area: word;
                     justify-self: end;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     font-weight: 700;
                 }
 
@@ -328,7 +346,7 @@ font-family: 'Roboto', sans-serif;
                    font-weight: 600;
                    grid-area: compcourse;
                    justify-self: start;
-                   font-size: 1vw;
+                   font-size: calc(10px + .5vw);
 
                  }
 
@@ -355,7 +373,7 @@ font-family: 'Roboto', sans-serif;
                   
                   .CourseButtonHeader {
                     margin-top: 2px;
-                    font-size: 1vw;
+                    font-size: calc(10px + .4vw);
                     max-width: 100%;
                     padding: 10px;
                     font-weight: 600;
@@ -379,7 +397,7 @@ font-family: 'Roboto', sans-serif;
 
                   .CompletedCourseButtonHeader {
                     margin-top: 2px;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     max-width: 100%;
                     padding: 10px;
                     font-weight: 600;
@@ -413,14 +431,14 @@ font-family: 'Roboto', sans-serif;
                   }
 
                   .CourseDescription {
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     padding: 0;
                     background-color: white;
       
                   }
 
                   .CompletedCourseDescription {
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     padding: 0;
                     background-color: white;
                   }
@@ -436,7 +454,7 @@ font-family: 'Roboto', sans-serif;
                     padding-bottom: -5%;
                     border-bottom: lightgrey 1px;
                     border-bottom-style: solid;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     margin-bottom: -.5%;
                     margin-top:10px; 
                     margin-left: 10px;
@@ -448,7 +466,7 @@ font-family: 'Roboto', sans-serif;
                     border-top: grey 1px;
                     
                     color: slategray;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     margin-top: 2px;
                     margin-bottom:10px;
                     margin-left: 10px;
@@ -469,7 +487,7 @@ font-family: 'Roboto', sans-serif;
                     border-bottom: lightgrey 1px;
                     margin-bottom: -.5%;
                     border-bottom-style: solid;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     margin-top:10px;
                     
                     font-weight: 600;
@@ -481,7 +499,7 @@ font-family: 'Roboto', sans-serif;
                     background-color: white;
                     border-bottom: grey 1px;
                     color: slategray;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     margin-top: 3px;
                     margin-bottom:10px;
                     margin-left: 10px;
@@ -498,7 +516,7 @@ font-family: 'Roboto', sans-serif;
                     border-bottom: lightgrey 1px;
                     margin-bottom: -.5%;
                     border-bottom-style: solid;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     margin-top:10px;
                     
                     font-weight: 600;
@@ -509,7 +527,7 @@ font-family: 'Roboto', sans-serif;
                   .CoursePres {
                     background-color: white;
                     color: slategray;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     margin-top: 2px;
                     margin-bottom:10px;
                     margin-left: 10px;
@@ -527,7 +545,7 @@ font-family: 'Roboto', sans-serif;
                     border-bottom: lightgrey 1px;
                     margin-bottom: -.5%;
                     border-bottom-style: solid;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     margin-top:10px;
                     
                     font-weight: 600;
@@ -538,7 +556,7 @@ font-family: 'Roboto', sans-serif;
                   .OverlappingReqs {
                     background-color: white;
                     color: slategray;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     margin-top: 2px;
                     margin-bottom:1px;
                     margin-left: 10px;
@@ -557,7 +575,7 @@ font-family: 'Roboto', sans-serif;
                     padding-bottom: -5%;
                     border-bottom: lightgrey 1px;
                     border-bottom-style: solid;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     margin-bottom: -.5%;
                     margin-top:10px; 
                     margin-left: 10px;
@@ -569,7 +587,7 @@ font-family: 'Roboto', sans-serif;
                     border-top: grey 1px;
                     
                     color: slategray;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     margin-top: 2px;
                     margin-bottom:10px;
                     margin-left: 10px;
@@ -590,7 +608,7 @@ font-family: 'Roboto', sans-serif;
                     border-bottom: lightgrey 1px;
                     margin-bottom: -.5%;
                     border-bottom-style: solid;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     margin-top:10px;
                     
                     font-weight: 600;
@@ -602,7 +620,7 @@ font-family: 'Roboto', sans-serif;
                     background-color: white;
                     border-bottom: grey 1px;
                     color: slategray;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     margin-top: 3px;
                     margin-bottom:10px;
                     margin-left: 10px;
@@ -619,7 +637,7 @@ font-family: 'Roboto', sans-serif;
                     border-bottom: lightgrey 1px;
                     margin-bottom: -.5%;
                     border-bottom-style: solid;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     margin-top:10px;
                     
                     font-weight: 600;
@@ -630,7 +648,7 @@ font-family: 'Roboto', sans-serif;
                   .CompCoursePres {
                     background-color: white;
                     color: slategray;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     margin-top: 2px;
                     margin-bottom:10px;
                     margin-left: 10px;
@@ -648,7 +666,7 @@ font-family: 'Roboto', sans-serif;
                     border-bottom: lightgrey 1px;
                     margin-bottom: -.5%;
                     border-bottom-style: solid;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     margin-top:10px;
                     
                     font-weight: 600;
@@ -659,7 +677,7 @@ font-family: 'Roboto', sans-serif;
                   .CompOverlappingReqs {
                     background-color: white;
                     color: slategray;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     margin-top: 2px;
                     margin-bottom:10px;
                     margin-left: 10px;
@@ -670,7 +688,7 @@ font-family: 'Roboto', sans-serif;
                     border-top: grey 1px;
                     background-color: white;
                     color: slategray;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     margin-top:10px;
                     margin-bottom:10px;
                     margin-left: 10px;
@@ -698,14 +716,19 @@ font-family: 'Roboto', sans-serif;
                   }
                 
                 .LinkToAcademicGuide {
+                  grid-area: link;
                   text-align: center;
                   background-color: #007bff;
                   vertical-align: middle;
-                  padding-top: 3px
+                  padding-top: 3px;
                 }
 
                 .LinkToAcademicGuide_Text {
                   text-decoration: underline white;
+                }
+
+                #linktext {
+                  font-size: calc(10px + .3vw);
                 }
 
                 .fourYearContainer {
@@ -726,13 +749,15 @@ font-family: 'Roboto', sans-serif;
                     border-radius: 0px !important;
                     font-size: 18px;
                     width: 98%;
-                    height: 100%;
+                    height: 85vh;
+                    min-width: 813px;
+                    max-height: 100%;
                   }
 
                   .PlanHeader {
                     padding: 6px;
                     display: grid;
-                    grid-template-columns: 86%;
+                    grid-template-columns: 84%;
                     grid-template-areas: 'plans add' 
                   }
 
@@ -767,6 +792,7 @@ font-family: 'Roboto', sans-serif;
                   .AddPlanButton {
                     color: white;
                     grid-area: add;
+                    justify-self: start;
                   }
 
                   .AddPlanText {
@@ -794,7 +820,6 @@ font-family: 'Roboto', sans-serif;
                     height: 48%;
                     width: 80%;
                     margin-right: 5px;
-                    
                   }
 
                   .SemesterHeader {
@@ -804,7 +829,7 @@ font-family: 'Roboto', sans-serif;
                   }
                   
                   .SemDate {
-                      font-size: 1vw;
+                      font-size: calc(10px + .5vw);
                       color: #003e78;
                       float: left;
                       margin-top: 3%;
@@ -824,7 +849,7 @@ font-family: 'Roboto', sans-serif;
                       color: #003e78;
                       grid-area: total;
                       margin-top: 3%;
-                      font-size: 1vw;
+                      font-size: calc(10px + .5vw);
                       font-weight: 700;
                   }
 
@@ -834,21 +859,21 @@ font-family: 'Roboto', sans-serif;
                     float: right;
                     text-align: right;
                     margin-top: 3%;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     font-weight: 700;
                     margin-right: 4%;
                   }
 
                   .SemesterHeader {
                     color: darkslategrey;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     padding: 2px;
                     margin-left: 3px;
                   }
                   
                   .SemesterFooter {
                     color: darkslategrey;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     padding: 2px;
                     margin-left: 3px;
                     display: grid;
@@ -913,7 +938,7 @@ font-family: 'Roboto', sans-serif;
 
                   .CoursePlanNumber {
                     grid-area: coursePlanNum;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     font-weight: 550;
                     justify-self: left;
                     margin-top: 4%;
@@ -922,7 +947,7 @@ font-family: 'Roboto', sans-serif;
                   
                   .CoursePlanUnits {
                     grid-area: coursePlanUnits;
-                    font-size: 1vw;
+                    font-size: calc(10px + .5vw);
                     font-weight: 550;
                     justify-self: right;
                     margin-top: 30%;
@@ -963,7 +988,7 @@ font-family: 'Roboto', sans-serif;
                 background-color: #5fa4ff !important;
                 border-top: none;
                 display: grid;
-                grid-template-columns: 75%;
+                grid-template-columns: 78%;
                 grid-template-areas: 'empty options';
                 padding: 3px
               }
@@ -983,6 +1008,7 @@ font-family: 'Roboto', sans-serif;
         grid-area: footer;
         border-top: solid 1px gray;
         justify-content: center;
+        margin-top: 5px;
         }
 
 
