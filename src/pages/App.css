@@ -69,7 +69,7 @@ font-family: 'Roboto', sans-serif;
             min-width: 360px;
             width: 98%;
             height: 85vh;
-            grid-template-rows: 5% 5% 85%;
+            grid-template-rows: 37px 37px auto 30px;
             margin-left: 15px;
             grid-template-areas:
                 "progress"
@@ -79,8 +79,9 @@ font-family: 'Roboto', sans-serif;
           }
 
             .TotalProgress {
+            min-height: 37px;
+            align-self: center;
             grid-area: progress;
-            font-size: calc(10px + .5vw);
             display: grid;
             padding-top: 10px;
             padding-left: 5px;
@@ -93,6 +94,7 @@ font-family: 'Roboto', sans-serif;
             }
           
                 .totProg {
+                  justify-self: center;
                     grid-area: texty;
                     float: left;
                     color: darkslategrey;
@@ -103,12 +105,14 @@ font-family: 'Roboto', sans-serif;
                 }
                 
                 .TotalProgressBar {
+                    align-self: center;
                     grid-area: bar;
                     height: 20px;
                     color: black;
                     float: right;
                     width: 95%;
                     margin-left: 10px;
+                    margin-top: -6px !important;
                 }
         
 
@@ -826,11 +830,14 @@ font-family: 'Roboto', sans-serif;
                   .SemesterHeader {
                     display: grid;
                     grid-template-columns: 90% 7%;
-                    grid-template-areas: 'date x space'
+                    grid-template-areas: 'date x space';
+                    height: 4vh;
+                    min-height: 25px;
+                    
                   }
                   
                   .SemDate {
-                      font-size: calc(10px + .5vw);
+                      font-size: calc(4px + .5vw + .5vh);
                       color: #003e78;
                       float: left;
                       margin-top: 3%;
@@ -850,7 +857,7 @@ font-family: 'Roboto', sans-serif;
                       color: #003e78;
                       grid-area: total;
                       margin-top: 3%;
-                      font-size: calc(10px + .5vw);
+                      font-size: calc(4px + .5vw + .5vh);
                       font-weight: 700;
                   }
 
@@ -860,7 +867,7 @@ font-family: 'Roboto', sans-serif;
                     float: right;
                     text-align: right;
                     margin-top: 3%;
-                    font-size: calc(10px + .5vw);
+                    font-size: calc(4px + .5vw + .5vh);
                     font-weight: 700;
                     margin-right: 4%;
                   }
@@ -874,7 +881,8 @@ font-family: 'Roboto', sans-serif;
                   
                   .SemesterFooter {
                     color: darkslategrey;
-                    font-size: calc(10px + .5vw);
+                    height: 4vh;
+                    min-height: 25px;
                     padding: 2px;
                     margin-left: 3px;
                     display: grid;
@@ -917,6 +925,7 @@ font-family: 'Roboto', sans-serif;
                   .CoursePlanButton {
                     width: 98%;
                     height: 16%;
+                    min-height: 25px;
                     margin-right: 1%;
                     margin-left: 1%;
                     margin-top: 1%;
@@ -939,7 +948,7 @@ font-family: 'Roboto', sans-serif;
 
                   .CoursePlanNumber {
                     grid-area: coursePlanNum;
-                    font-size: calc(5px + .5vw);
+                    font-size: calc(10px + .5vw);
                     font-weight: 550;
                     justify-self: left;
                     margin-top: 4%;
