@@ -343,6 +343,16 @@ class Requirement extends Component {
                                 </div>
                             </Accordion.Toggle>
                         </div>
+
+                        {this.props.notes !== '' && 
+                        <Accordion.Collapse key = {this.state.selectedPlan + this.props.requirementTitle} eventKey={this.props.index}>
+                            <Card.Body className = 'RequirementNoteCard'>
+                                <span>
+                                    <a style = {{fontWeight: 600, marginLeft:'20px'}}>NOTE: </a>
+                                    <a className = 'RequirementNote'>{this.props.notes}</a>
+                                </span>
+                            </Card.Body>
+                        </Accordion.Collapse>}
                         
                         {compCourse.map((course, index)=> (
                             <Accordion.Collapse key = {this.state.selectedPlan + this.props.requirementTitle + index} eventKey={this.props.index}>
@@ -526,6 +536,15 @@ class Requirement extends Component {
                                 </div>
                             </Accordion.Toggle>
                         </div>
+                        {this.props.notes !== '' && 
+                        <Accordion.Collapse key = {this.state.selectedPlan + this.props.requirementTitle} eventKey={this.props.index}>
+                                <Card.Body className = 'RequirementNoteCard'>
+                                    <span>
+                                        <a style = {{fontWeight: 600, marginLeft:'20px'}}>NOTE: </a>
+                                        <a className = 'RequirementNote'>{this.props.notes}</a>
+                                    </span>
+                                </Card.Body>
+                        </Accordion.Collapse>}
                         {compCourse.map((course, index)=> (
                         <Accordion.Collapse key = {this.state.selectedPlan + this.props.requirementTitle + index} eventKey={this.props.index}>
                             <CompletedCourseButton 

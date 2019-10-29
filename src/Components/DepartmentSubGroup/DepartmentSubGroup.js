@@ -78,6 +78,7 @@ class DepartmentSubGroup extends Component {
     }
 
     render() {
+        console.log(this.props.courses)
         let userCourses = getCoursesFromSemesters(this.state.selectedPlan.semesters);
         let Courses = this.props.courses;
         let compCourse = [];

@@ -171,6 +171,15 @@ class CategoryList extends Component {
         }
     }
 
+    getCategoryName() {
+        let keys = Object.keys(this.state.dataArray[this.state.selectedCatNum][this.state.selectedCategory])
+        if (keys.indexOf('ShortenedName') !== -1) {
+            return this.state.dataArray[this.state.selectedCatNum][this.state.selectedCategory]['ShortenedName']
+        } else {
+            return this.state.selectedCategory
+        }
+    }
+
     render() {
         return (
             <>
@@ -183,7 +192,7 @@ class CategoryList extends Component {
                 <div className = 'Category'>
                     <Dropdown className="CategoryDropdown" onToggle = {() => this.toggleDropdown()}>
                         <Dropdown.Toggle className="CategoryToggle" id = 'DropdownToggle'>
-                        {this.state.selectedCategory}
+                            {this.getCategoryName()}
                         </Dropdown.Toggle>
                         <Dropdown.Menu className = "DropdownMenu" alignRight = {true} style = {this.state.show? {} : {display: 'none'}}>
                         {this.state.categories.map((category, index) => {

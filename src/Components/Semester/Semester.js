@@ -179,9 +179,7 @@ class Semester extends Component {
       }
 
     calcWidth() {
-        if (this.state.selectedPlan.semesters.length > 10) {
-            return '15.75%'
-        }
+        
         if (this.state.selectedPlan.semesters.length > 8) {
             return '19%'
         }

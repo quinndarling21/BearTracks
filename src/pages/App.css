@@ -269,6 +269,15 @@ font-family: 'Roboto', sans-serif;
                       to   { opacity: 1; }
                   }
 
+                  .RequirementNote {
+                    font-style: italic;
+                  }
+
+                  .RequirementNoteCard {
+                    padding: 5px !important;
+                    background-color: lightyellow;
+                  }
+
                   .SubgroupCard {
                     margin-left: 2px;
                     margin-right: 2px;
@@ -810,8 +819,11 @@ font-family: 'Roboto', sans-serif;
                   .PlanCardBody {
                     background-color: #5fa4ff;
                     max-height: 100%;
-                    padding: -4%;
-                    padding-bottom: 0px;
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                    padding-bottom: 0 !important;
+                    overflow-y: scroll;
+                    padding-top: 5px !important;
                   }
                   
                   .SemesterContainer {
@@ -825,6 +837,7 @@ font-family: 'Roboto', sans-serif;
                     height: 48%;
                     width: 80%;
                     margin-right: 5px;
+                    margin-bottom: 0px;
                   }
 
                   .SemesterHeader {

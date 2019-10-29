@@ -1,4 +1,4 @@
-import courses from '../../../../courses.json';
+import courses from '../../../../../../courses.json';
     
     const Molecular_and_Cell_Biology_Genetics_Genomics_And_Development_Track2
      = [

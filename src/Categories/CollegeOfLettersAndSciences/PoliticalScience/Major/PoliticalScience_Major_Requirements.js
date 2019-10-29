@@ -1,6 +1,6 @@
 import courses from '../../../../courses.json';
     
-    const PolitcalScience_Major_Requirements = [
+    const PoliticalScience_Major_Requirements = [
     {
       "Division": "Lower Division",
       "Requirement": "Into to American Politics",

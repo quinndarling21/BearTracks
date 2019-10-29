@@ -8,6 +8,7 @@ import { Tabs, Tab, Fab, IconButton, Tooltip } from '@material-ui/core';
 import {ThemeProvider} from '@material-ui/styles'
 import { createMuiTheme } from '@material-ui/core/styles';
 import Fade from '@material-ui/core/Fade';
+import majorOptions from '../../majorOptions'
 
 
 function getListofYears() {
@@ -47,14 +48,6 @@ function isEarlier(testDate, setDate) {
         }
     }
 }
-
-const majorOptions = [
-    { value: ['College of Letters and Sciences', 'Data Science'], label: 'Data Science' },
-    { value: ['College of Letters and Sciences', 'Mathematics'], label: 'Mathematics' },
-    { value: ['College of Letters and Sciences', 'Computer Science'], label: 'Computer Science' },  
-    { value: ['College of Engineering', 'Civil Engineering'], label: 'Civil Engineering' },
-    { value: ['College of Letters and Sciences', 'Statistics'], label: 'Statistics'}      
-  ]
 const minorOptions = [
     { value: ['College of Letters and Sciences', 'Philosophy'], label: 'Philosophy' },      
     { value: ['College of Letters and Sciences', 'Linguistics'], label: 'Linguistics' },      
@@ -92,7 +85,8 @@ class Planner extends Component {
             showEditDegrees: false,
             showMinorErrorModal: false,
             showMajorErrorModal: false,
-            semestersShouldUpdate: false
+            semestersShouldUpdate: false,
+            showMissingTitleModal: false,
         }
         this.startTermInput = React.createRef();
         this.startYearInput = React.createRef();
@@ -127,6 +121,7 @@ class Planner extends Component {
         this.closeMinorErrorModal = this.closeMinorErrorModal.bind(this)
         this.closeMajorErrorModal = this.closeMajorErrorModal.bind(this)
         this.renderSemesters = this.renderSemesters.bind(this)
+        this.closeTitleErrorModal = this.closeTitleErrorModal.bind(this)
     }
 
     openDrawer(){
@@ -174,6 +169,12 @@ class Planner extends Component {
 
     addPlan() {
         const inputs = this.format();
+        if (this.state.title === null || this.state.title.length === 0) {
+            this.setState({
+                showMissingTitleModal: true
+            })
+            return
+        }
         if (inputs[3]==='none') {
             makePlan(inputs[0], inputs[1], inputs[2], this.state.title);
             this.setState({
@@ -211,6 +212,12 @@ class Planner extends Component {
                 numPlans: plans.length
                 })
         }
+    }
+
+    closeTitleErrorModal() {
+        this.setState({
+            showMissingTitleModal:false
+        })
     }
 
     closeMajorErrorModal() {
@@ -744,6 +751,13 @@ class Planner extends Component {
                 <Modal show = {this.state.showMinorErrorModal} onHide = {() => this.closeMinorErrorModal()}>
                     <Modal.Body>
                         You cannot complete a minor without completing a major in the same college. 
+                    </Modal.Body>
+                </Modal>
+
+                {/*MISSING TITLE MODAL */}
+                <Modal show = {this.state.showMissingTitleModal} onHide = {() => this.closeTitleErrorModal()}>
+                    <Modal.Body>
+                        Please give your plan a title.
                     </Modal.Body>
                 </Modal>
 

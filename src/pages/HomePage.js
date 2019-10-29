@@ -5,14 +5,9 @@ import {Card, CardHeader, CardContent, CardMedia, MobileStepper, Button, FormGro
 import Select from 'react-select';
 import {courseOptions} from '../courseOptions.js'
 import AsyncSelect from 'react-select/async';
+import majorOptions from '../majorOptions'
 
-const majorOptions = [
-    { value: ['College of Letters and Sciences', 'Data Science'], label: 'Data Science' },
-    { value: ['College of Letters and Sciences', 'Mathematics'], label: 'Mathematics' },
-    { value: ['College of Letters and Sciences', 'Computer Science'], label: 'Computer Science' },  
-    { value: ['College of Engineering', 'Civil Engineering'], label: 'Civil Engineering' },
-    { value: ['College of Letters and Sciences', 'Statistics'], label: 'Statistics'}      
-  ]
+
 const minorOptions = [
     { value: ['College of Letters and Sciences', 'Philosophy'], label: 'Philosophy' },      
     { value: ['College of Letters and Sciences', 'Linguistics'], label: 'Linguistics' },      

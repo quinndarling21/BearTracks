@@ -7,6 +7,15 @@ import CourseButton from '../CourseButtonComponent/CourseButton';
 import CourseSearchTable from '../CourseSearchTableComponent/CourseSearchTable'
 const allCourses = Object.keys(courses);
 
+function checkForNotes(requirement) {
+    var keys = Object.keys(requirement)
+    if (keys.indexOf("Notes")!== -1) {
+        return requirement['Notes']
+    } else {
+        return ''
+    }
+}
+
 class DivisionList extends Component {
     //props are data (either user.majorData, user.collegeData etc.), clicked (boolean), onClick
     //renders a button. If there are multiple majors/minors/colleges, renders a button to click to next, renders list of divisions if clicked
@@ -114,6 +123,7 @@ class DivisionList extends Component {
                                 numUnits={requirement['Minimum Units']}
                                 isClicked={false}
                                 courseData={requirement['Course']}
+                                notes = {checkForNotes(requirement)}
                                 progress={this.props.progress}
                                 selectedPlan={this.state.selectedPlan}
                                 division = {this.state.selectedDivision}

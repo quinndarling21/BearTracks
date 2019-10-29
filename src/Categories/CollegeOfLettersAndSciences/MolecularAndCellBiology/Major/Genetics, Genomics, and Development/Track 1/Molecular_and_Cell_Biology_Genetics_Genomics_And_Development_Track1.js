@@ -1,4 +1,4 @@
-import courses from '../../../../courses.json';
+import courses from '../../../../../../courses.json';
     
     const Molecular_and_Cell_Biology_Genetics_Genomics_And_Development_Track1
      = [
@@ -72,7 +72,7 @@ import courses from '../../../../courses.json';
         "Number of Classes": 2,
         "Minimum Units": 6,
         "Course": ['departmentsubgroup',
-    ['List A', [courses['CHEM 113'],
+    [['List A', [courses['CHEM 113'],
     courses['CHEM 115'],
     courses['CHEM 130B'],
     courses['ESPM C148'],
@@ -95,7 +95,7 @@ import courses from '../../../../courses.json';
     courses['NUSCTX C114'],
     courses['PHYSICS 112'],
     courses['PLANTBI 135'],
-    courses['PLANTBI 150']],
+    courses['PLANTBI 150']]],
     ['List B', [courses['BIO ENG 131'],
     courses['BIO ENG 143'],
     courses['BIO ENG 144'],
