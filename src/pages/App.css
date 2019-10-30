@@ -18,7 +18,7 @@ font-family: 'Roboto', sans-serif;
 .Website {
     min-height: 750px;
     display: grid;
-    grid-template-rows: 10% 97%;
+    grid-template-rows: 8% 97%;
     grid-template-areas: 
       "header"
       "planner"
@@ -42,7 +42,8 @@ font-family: 'Roboto', sans-serif;
         .Logo {
             margin-top: -5px;
             margin-right: 5px;
-            min-width: 217px;
+            width: 240px;
+            height: 61.61px;
         }
         
         .BearTracks {
@@ -837,7 +838,7 @@ font-family: 'Roboto', sans-serif;
                     height: 48%;
                     width: 80%;
                     margin-right: 5px;
-                    margin-bottom: 0px;
+                    margin-bottom: 5px;
                   }
 
                   .SemesterHeader {
@@ -926,6 +927,7 @@ font-family: 'Roboto', sans-serif;
                     flex-direction: column;
                     color: #F0F8FF;
                     overflow: scroll;
+                    height: 26vh;
                   }
 
                   @keyframes coursePlanHover {
