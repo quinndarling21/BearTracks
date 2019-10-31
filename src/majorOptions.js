@@ -1,4 +1,6 @@
-var majorOptions = [{'value': ['College of Letters and Sciences', 'Data Science'],
+var majorOptions = [{'value': ['Haas School of Business', 'Business Administration'],
+'label': 'Business Administration'},
+{'value': ['College of Letters and Sciences', 'Data Science'],
 'label': 'Data Science'},
 {'value': ['College of Letters and Sciences',
  'Molecular and Cell Biology--Biochemistry and Molecular Biology (Track 1)'],

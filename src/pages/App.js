@@ -19,9 +19,10 @@ class App extends React.Component {
             </Navbar.Brand>
             <Navbar.Collapse className = 'HeaderNavBar'>
               <Nav>
-                <NavLink>My Profile</NavLink>
+                <NavLink href = 'https://docs.google.com/forms/d/e/1FAIpQLSf02AMP-kJG6S1XTxAGFmMseDLgiTGmlZsk8HO7BHKqkvQRhg/viewform?usp=sf_link' target = '_blank'>Report Bug</NavLink>
+                {/* <NavLink>My Profile</NavLink>
                 <NavLink>Explore Degrees</NavLink>
-                <NavLink>About BearTracks</NavLink>
+                <NavLink>About BearTracks</NavLink> */}
               </Nav>
             </Navbar.Collapse>
           </Navbar>

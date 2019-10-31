@@ -19,6 +19,8 @@ import PoliticalScience_Major_Requirements from './Categories/CollegeOfLettersAn
 import Psychology_Major_Requirements from './Categories/CollegeOfLettersAndSciences/Psychology/Major/Psychology_Major_Requirements'
 import University_Courses from './Categories/University/universityCourses'
 import University_Requirements from './Categories/University/universityRequirements.json'
+import BusinessAdministration_Major_Requirements from './Categories/Haas/Business Administration/Major/BusinessAdministration_Major_Requirements.js';
+import Haas_Requirements from './Categories/Haas/CollegeRequirements/HaasRequirements.js';
 
 var catalog =  {'Colleges': {
                         "College of Letters and Sciences": 
@@ -119,7 +121,20 @@ var catalog =  {'Colleges': {
                                     "Link": 'http://guide.berkeley.edu/undergraduate/degree-programs/data-science/#majorrequirementstext'
                                 }
                             }
-                        }
+                        },
+                        "Haas School of Business":
+                            {
+                            "College Requirements": {
+                                "Requirements": Haas_Requirements,
+                                "Link": 'http://guide.berkeley.edu/undergraduate/colleges-schools/haas-business/#collegerequirementstext'
+                            },
+                            "Majors": {
+                                "Business Administration": {
+                                    "Requirements": BusinessAdministration_Major_Requirements,
+                                    "Link": 'http://guide.berkeley.edu/undergraduate/degree-programs/business-administration/#majorrequirementstext'
+                                }
+                            }
+                            }
 
                     }}
 
