@@ -7,6 +7,13 @@ import {courseOptions} from '../courseOptions.js'
 import AsyncSelect from 'react-select/async';
 import majorOptions from '../majorOptions'
 
+const testEnrollments = {'Colleges': 
+                                {
+                                'College of Letters and Sciences': 
+                                    {
+                                    'Majors': ['Physics'],
+                                    'Minors': ['Mathematics']
+                                    }}}
 
 const minorOptions = [
     { value: ['College of Letters and Sciences', 'Philosophy'], label: 'Philosophy' },      
@@ -72,7 +79,7 @@ class HomePage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            signUpPhase: 1,
+            signUpPhase: 0,
             phases: 3,
             firstName:'',
             firstNameError: false,
@@ -118,6 +125,24 @@ class HomePage extends React.Component {
         this.updateCompCourses = this.updateCompCourses.bind(this)
         this.handleInputChange = this.handleInputChange.bind(this)
         this.setCourseIndex = this.setCourseIndex.bind(this)
+    }
+
+    //**THIS FUNCTION WILL SEND THE USER INFORMATION TO THE BACKEND AND STORE THIER DATA**//
+    createUser() {
+        const firstName = this.state.firstName
+        const lastName = this.state.lastName
+        const email = this.state.email
+        const password = this.state.password
+        const testPlan = makePlan('Fall 2017', 'Spring 2021', testEnrollments, 'TEST PASSED')
+
+        //**IMPLEMENT FUNCTION BELOW USING ABOVE INFORMATION**//
+
+
+    }
+
+    toPlanner() {
+        this.createUser()
+        this.props.toPlanner()
     }
 
     addPlan() {
@@ -675,7 +700,7 @@ class HomePage extends React.Component {
                     <img className = 'Title' src={require("../Images/BearTracksTitle.png")}/>
                     <h1>Congratulations {this.state.firstName}!</h1>
                     <h1>Your BearTracks account has been created</h1>
-                    <Button onClick = {() => this.addPlan()} onClick = {()=>this.props.toPlanner()}>
+                    <Button onClick = {() => this.addPlan()} onClick = {()=>this.toPlanner()}>
                         Take me to my peronsal planner
                     </Button>
                 </CardContent>}
