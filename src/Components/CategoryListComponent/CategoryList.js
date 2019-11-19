@@ -182,7 +182,7 @@ class CategoryList extends Component {
 
     render() {
         return (
-            <>
+            <div>
                 <container className="TotalProgress">
                     <span className='totProg'>
                         PROGRESS:
@@ -237,7 +237,7 @@ class CategoryList extends Component {
                         {' for official requirement information.'}
                     </span>
                 </container>
-            </>
+            </div>
         )
         }
     }

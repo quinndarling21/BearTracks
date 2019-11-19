@@ -198,10 +198,10 @@ class Semester extends Component {
                     connectDropTarget(node);}}
                     style = {{width: this.calcWidth()}}>
                     <Card.Header className="SemesterHeader" onMouseEnter = {() => this.toggleHoverOn()} onMouseLeave = {() => this.toggleHoverOff()}>
-                        <>
+                        <div>
                             <h1 className="SemDate"> {this.props.date.toUpperCase()} </h1>
                             {this.state.hovering && <img className = 'deleteSemesterButton' onClick = {()=>this.props.removeSemester()} src={require("../../Images/x.png")} height="15" width="15"/>}
-                        </>
+                        </div>
                         
                     </Card.Header>
                     <Card.Body className = "CourseTarget" style={{ background: backgroundColor}}>

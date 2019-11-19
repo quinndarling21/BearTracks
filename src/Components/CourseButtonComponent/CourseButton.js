@@ -75,7 +75,7 @@ class CourseButton extends Component {
                 </Card.Header>
                 <Collapse in={this.props.isSelected}>
                 <Card.Body className='CourseDescription'>
-                    <>
+                    <div>
                     {this.props.Course['Desc'] && 
                     <div className = "DescDiv">
                     <h1 className = 'DescHeader'> DESCRIPTION </h1>
@@ -102,7 +102,7 @@ class CourseButton extends Component {
                     {this.props.overlapping.map((requirment, index) => 
                     <p className = 'OverlappingReqs'>{requirment}</p>)}
                     </div>}
-                    </>
+                    </div>
                 </Card.Body>
                 </Collapse>
             </Card>

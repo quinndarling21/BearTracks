@@ -546,7 +546,7 @@ class Planner extends Component {
                             Add Semester
                             </Nav.Item>
                                 {this.state.showAddSemester && 
-                                <>
+                                <div>
                                 <Nav.Item className = "selectTerm">
                                     <DropdownButton 
                                     title = {this.state.selectedTerm}
@@ -585,7 +585,7 @@ class Planner extends Component {
                                         </Button>
                                     </ButtonGroup>
                                 </Nav.Item>
-                                </>
+                                </div>
                                 }
                             <Nav.Item as = {Button}
                                 className = "editDegrees" 

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Semester from '../Semester/Semester';
 import { Navbar, Nav } from 'react-bootstrap'
 import user from '../../UserPlans/User';
-import { thisExpression } from '@babel/types';
 
 
 //makes a list of semester dates such as fall 2017 based on start and end

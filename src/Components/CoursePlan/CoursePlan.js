@@ -94,7 +94,7 @@ function collect(connect, monitor) {
         
         
         return (
-          <> 
+          <div> 
             <Card
               className = "CoursePlanButton"
               border="primary"
@@ -130,7 +130,7 @@ function collect(connect, monitor) {
               </Modal.Header>
               <Modal.Body>{this.props.description}</Modal.Body>
             </Modal>
-          </>
+          </div>
         );
   }
 }

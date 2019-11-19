@@ -22,13 +22,13 @@ class Main extends Component {
     
     render() {
         return (
-            <>
+            <div>
                 {this.state.page === 0 && 
                 <HomePage
                     toPlanner = {()=>this.toPlanner()}/>}
                 {this.state.page === 1 && 
                 <App/>}
-            </>
+            </div>
             
         )
     }
